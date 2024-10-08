@@ -1,9 +1,7 @@
-const move=require('./move');
+const move = require('./move');
 
 class pokemon {
-
-    constructor(nombre,tipo,HPactual,HPmaximo,ataque,defensa,move){
-
+    constructor(nombre, tipo, HPactual, HPmaximo, ataque, defensa, move) {
         this.nombre = nombre;
         this.tipo = tipo;
         this.HPactual = HPactual;
@@ -11,21 +9,16 @@ class pokemon {
         this.ataque = ataque;
         this.defensa = defensa;
         this.move = move;
-        this.curacion = false;
+        this.puedeCurarse = true; // Puede curarse una vez por combate
     }
 
-
-    /**
-     * 
-     */
     atacar(moveIndex, oponente) {
         const move = this.move[moveIndex];
-        // Cálculo del daño usando la fórmula proporcionada
-        const randomFactor = 0.85 + Math.random() * 0.15; // Random entre 0.85 y 1.0
-        const damage = Math.max(0, (this.ataque / oponente.defensa) * move.danoB * randomFactor);
+        const randomFactor = 0.85 + Math.random() * 0.15;
+        const damage = Math.max(1, (this.ataque / oponente.defensa) * move.baseDamage * randomFactor);
         oponente.HPactual = Math.max(oponente.HPactual - damage, 0);
-        console.log(`${this.nombre} usa ${move.nombre} y causa ${Math.round(damage)} puntos de daño a ${oponente.nombre}`);
-        
+        console.log(`${this.nombre} usó ${move.nombre} y causó ${Math.round(damage)} puntos de daño a ${oponente.nombre}.`);
+
         if (oponente.HPactual <= 0) {
             console.log(`${oponente.nombre} ha sido derrotado.`);
         } else {
@@ -33,20 +26,16 @@ class pokemon {
         }
     }
 
-    /**
-     * 
-     */
-    curar() {
+    curarse() {
         if (this.puedeCurarse) {
-            const cantidadCuracion = Math.min(30, this.HPmaximo - this.HPactual); // Curar hasta un máximo de 30 HP
+            const cantidadCuracion = Math.min(Math.floor(this.HPmaximo * 0.5), this.HPmaximo - this.HPactual);
             this.HPactual += cantidadCuracion;
-            this.puedeCurarse = false; // Restringir curación a una vez por combate
-            console.log(`${this.nombre} se ha curado ${cantidadCuracion} HP. Ahora tiene ${this.HPactual}/${this.HPmaximo} HP.`);
+            this.puedeCurarse = false;
+            console.log(`${this.nombre} se ha curado ${cantidadCuracion} puntos de HP. Ahora tiene ${this.HPactual}/${this.HPmaximo} HP.`);
         } else {
-            console.log(`${this.nombre} Ya no puede curarse.`);
+            console.log(`${this.nombre} ya no puede curarse en este combate.`);
         }
     }
 }
 
-module.exports=pokemon;
-
+module.exports = pokemon;
