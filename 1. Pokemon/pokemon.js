@@ -1,21 +1,33 @@
 const move = require('./move');
 
-class pokemon {
-    constructor(nombre, tipo, HPactual, HPmaximo, ataque, defensa, move) {
+class Pokemon {
+    constructor(nombre, tipo, HPactual, HPmaximo, ataque, defensa, moves) {
         this.nombre = nombre;
         this.tipo = tipo;
         this.HPactual = HPactual;
         this.HPmaximo = HPmaximo;
         this.ataque = ataque;
         this.defensa = defensa;
-        this.move = move;
+        this.moves = moves; // Asegúrate de que esta propiedad sea plural (moves)
         this.puedeCurarse = true; // Puede curarse una vez por combate
     }
 
     atacar(moveIndex, oponente) {
-        const move = this.move[moveIndex];
-        const randomFactor = 0.85 + Math.random() * 0.15;
+        const move = this.moves[moveIndex]; // Usar this.moves en lugar de this.move
+
+        // Comprobar que el movimiento existe
+        if (!move) {
+            console.log("Movimiento no válido.");
+            return;
+        }
+
+        // Cálculo del daño usando la fórmula proporcionada
+        const randomFactor = 0.85 + Math.random() * 0.15; // Factor aleatorio entre 0.85 y 1.0
         const damage = Math.max(1, (this.ataque / oponente.defensa) * move.baseDamage * randomFactor);
+
+    
+
+        // Aplicar daño
         oponente.HPactual = Math.max(oponente.HPactual - damage, 0);
         console.log(`${this.nombre} usó ${move.nombre} y causó ${Math.round(damage)} puntos de daño a ${oponente.nombre}.`);
 
@@ -38,4 +50,4 @@ class pokemon {
     }
 }
 
-module.exports = pokemon;
+module.exports = Pokemon;

@@ -1,12 +1,10 @@
 
 
- class move {
-    constructor(nombre,dañoB) {
-
+class Move {
+    constructor(nombre, baseDamage) {
         this.nombre = nombre;
-        this.danoB = dañoB;
+        this.baseDamage = baseDamage; // Cambié 'danoB' a 'baseDamage' para que coincida con el uso en la clase pokemon
     }
+}
 
-    }
-
-module.exports=move;
+module.exports = Move;
