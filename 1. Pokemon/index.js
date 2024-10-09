@@ -31,7 +31,7 @@ const pokemonList = [
 
 // Función para despedir programa
 function salir() {
-    console.log("Gracias por jugar. ¡Hasta luego!");
+    console.log("Gracias por jugar. ¡Hasta luego! by:juancaaa11");
 }
 
 // Función menú principal
