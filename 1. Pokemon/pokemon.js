@@ -28,8 +28,8 @@ class Pokemon {
     
 
         // Aplicar daño
-        oponente.HPactual = Math.max(oponente.HPactual - damage, 0);
-        console.log(`${this.nombre} usó ${move.nombre} y causó ${Math.round(damage)} puntos de daño a ${oponente.nombre}.`);
+        oponente.HPactual = Math.floor(oponente.HPactual - damage, 0);
+        console.log(`${this.nombre} usó ${move.nombre} y causó ${Math.floor(damage)} puntos de daño a ${oponente.nombre}.`);
 
         if (oponente.HPactual <= 0) {
             console.log(`${oponente.nombre} ha sido derrotado.`);
