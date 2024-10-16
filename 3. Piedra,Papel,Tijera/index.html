@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, Papel o Tijeras</title>
+
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #c7d2eb;
+            flex-direction: column;
+        }
+
+        .juego {
+            align-items: center;
+            padding: auto;
+            text-align: center;
+        }
+
+        .opciones {
+            padding: 40px;
+            border-radius: 1em;
+            border-color: black;
+            border-style: solid;
+            font-size: 40px;
+            font-weight: bold;
+            height: 150px;
+            width: 150px;
+            cursor: pointer;
+        }
+
+        .opciones:hover {
+            background-color: antiquewhite;
+        }
+
+        .titulo {
+            color: rgb(255, 255, 255);
+            text-shadow: 2px 2px 2px #000000;
+            text-align: center;
+            font-size: 50px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Estilo para el resultado */
+        #resultado {
+            margin-top: 20px;
+            font-size: 13px;
+            color: black;
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 25px;
+            width: 60%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="juego">
+        <h1 class="titulo">Piedra, Papel o Tijeras</h1><br><br>
+        <button class="opciones">🧱</button>
+        <button class="opciones">🧻</button>
+        <button class="opciones">✂</button>
+
+        <!-- Contenedor para mostrar el resultado -->
+        <div id="resultado"></div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
