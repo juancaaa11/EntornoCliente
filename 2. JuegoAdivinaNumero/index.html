@@ -1,27 +1,84 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego de Adivinanzas</title>
+    <title>Adivina el Número</title>
 
     <style>
+        @font-face {
+            font-family: 'TTBlack'; 
+            src: url('_fonts/TT\ Backwards\ Sans\ Trial\ Black.otf') format('opentype');
+        }
 
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #c7d2eb;
+            flex-direction: column;
+        }
 
+        .juego {
+            align-items: center;
+            text-align: center;
+        }
 
+        .titulo {
+            color: rgb(255, 255, 255);
+            text-shadow: 2px 2px 2px #000000;
+            text-align: center;
+            font-size: 59px;
+            font-family: TTBlack;
+        }
+
+        .input-adivina {
+            font-size: 40px;
+            text-align: center;
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .boton-adivina {
+            font-size: 30px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .boton-adivina:hover {
+            background-color: antiquewhite;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            font-size: 20px;
+            color: black;
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 60%;
+            margin: 0 auto;
+            margin-top: 25px;
+        }
     </style>
-
 </head>
 
 <body>
-    
 
+    <div class="juego">
+        <h1 class="titulo">Adivina el Número</h1><br><br>
+        <input type="number" id="numero" class="input-adivina" placeholder="Tu número"><br>
+        <button class="boton-adivina" onclick="adivinar()">Adivinar</button>
+
+        <!-- Contenedor para mostrar el resultado -->
+        <div id="resultado"></div>
+    </div>
+
+    <script src="script.js"></script>
 
 </body>
 
 </html>
-
-<!--@author: juancaaa11-->
