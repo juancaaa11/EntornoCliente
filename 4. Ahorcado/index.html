@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahorcado</title>
+
+    <style>
+        @font-face {
+            font-family: 'TTBlack'; 
+            src: url('_fonts/TT\ Backwards\ Sans\ Trial\ Black.otf') format('opentype');
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #c7d2eb;
+            flex-direction: column;
+        }
+
+        .juego {
+            align-items: center;
+            text-align: center;
+        }
+
+        .titulo {
+            color: rgb(255, 255, 255);
+            text-shadow: 2px 2px 2px #000000;
+            text-align: center;
+            font-size: 59px;
+            font-family: TTBlack;
+        }
+
+        .letra-input {
+            font-size: 40px;
+            text-align: center;
+            width: 50px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .boton-adivina {
+            font-size: 30px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .boton-adivina:hover {
+            background-color: antiquewhite;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            font-size: 20px;
+            color: black;
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 60%;
+            margin: 0 auto;
+            margin-top: 25px;
+        }
+
+        .palabra-oculta {
+            font-size: 30px;
+            letter-spacing: 10px;
+            margin-bottom: 20px;
+        }
+
+        .vidas {
+            font-size: 25px;
+            color: red;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="juego">
+        <h1 class="titulo">Ahorcado</h1><br><br>
+        
+        <div class="palabra-oculta" id="palabraOculta">_ _ _ _ _</div>
+        <input type="text" id="letra" class="letra-input" maxlength="1" placeholder="Letra"><br>
+        <button class="boton-adivina" onclick="adivinarLetra()">Adivinar</button>
+
+        <!-- Contenedor para mostrar el resultado -->
+        <div id="resultado"></div>
+        <div class="vidas" id="vidas"></div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
