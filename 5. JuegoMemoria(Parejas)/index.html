@@ -1,67 +1,74 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego Memoria de Parejas</title>
+    <title>Juego de Memoria (Parejas)</title>
 
     <style>
-
         @font-face {
-            font-family: 'TTBlack'; 
+            font-family: 'TTBlack';
             src: url('_fonts/TT\ Backwards\ Sans\ Trial\ Black.otf') format('opentype');
         }
 
-        h1{
-
-            text-align: center;
-            font-family: TTBlack;
-            font-size: 50px;
-
-        }
-
         body {
-
-            background-color: rgb(168, 164, 164);
-
-        }
-
-        .juego{
-
+            height: 100vh;
             display: flex;
             justify-content: center;
-
-
+            align-items: center;
+            background-color: #c7d2eb;
+            flex-direction: column;
         }
 
-    </style>
+        .juego {
+            display: grid;
+            grid-template-columns: repeat(4, 100px);
+            gap: 10px;
+            justify-content: center;
+        }
 
+        .titulo {
+            color: rgb(255, 255, 255);
+            text-shadow: 2px 2px 2px #000000;
+            text-align: center;
+            font-size: 59px;
+            font-family: TTBlack;
+            margin-bottom: 20px;
+        }
+
+        .carta {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            font-size: 40px;
+            cursor: pointer;
+            border-radius: 10px;
+            border: 2px solid #333;
+            font-family: Arial, sans-serif;
+        }
+
+        .oculta {
+            background-color: #333;
+            color: #333;
+        }
+
+        .encontrada {
+            background-color: #d4edda;
+            cursor: default;
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>Juego Memoria de Parejas</h1>
+    <h1 class="titulo">Juego de Memoria (Parejas)</h1>
+    <div class="juego" id="tablero"></div>
 
-    <div class="juego"></div>
-
-
-    <script>
-
-
-        const frutas = ['🍉','🍈','🍇','🍇','🍉','🍈','🥑','🥑'];
-
-        const juego = document.querySelector('.juego');
-
-        const cartas = document.createElement('div');
-
-
-        
-
-
-    </script>
+    <script src="script.js"></script>
 
 </body>
 
