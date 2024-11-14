@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag & Drop</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    
+    <h1>Clasifica las palabras en la categoría correcta</h1>
+    <div class="categorias">
+        <div class="categoria" id="Frutas" ondrop="soltar(event)" ondragover="permitirSoltar(event)">
+            <h2>Frutas</h2>
+        </div>
+        <div class="categoria" id="Animales" ondrop="soltar(event)" ondragover="permitirSoltar(event)">
+            <h2>Animales</h2>
+        </div>
+        <div class="categoria" id="Colores" ondrop="soltar(event)" ondragover="permitirSoltar(event)">
+            <h2>Colores</h2>
+        </div>
+    </div>
+    <div class="palabras" id="contenedor-palabras">
+        <div class="palabra" draggable="true" ondragstart="arrastrar(event)" id="Manzana">Manzana</div>
+        <div class="palabra" draggable="true" ondragstart="arrastrar(event)" id="Perro">Perro</div>
+        <div class="palabra" draggable="true" ondragstart="arrastrar(event)" id="Rojo">Rojo</div>
+        <div class="palabra" draggable="true" ondragstart="arrastrar(event)" id="Banana">Banana</div>
+        <div class="palabra" draggable="true" ondragstart="arrastrar(event)" id="Gato">Gato</div>
+        <div class="palabra" draggable="true" ondragstart="arrastrar(event)" id="Verde">Verde</div>
+    </div>
+    <button onclick="validar()">Validar</button>
+    <button onclick="resetear()">Reset</button>
+    <p id="resultado"></p>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
+
+<!--@author: juancaaa11-->
