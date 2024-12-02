@@ -40,4 +40,3 @@ Este repositorio recoge los ejercicios y proyectos realizados en la asignatura *
    ```bash
    git clone https://github.com/juancaaa11/EntornoCliente.git
 
-@author: juancaaa11
