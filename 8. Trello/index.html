@@ -2,17 +2,39 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=7, initial-scale=1.0">
-    <title>Tarea Trello</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trello Simulador</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    
-    
+
+  <div class="container">
+    <h1>Trello Simulador</h1>
+    <div class="input-section">
+      <input type="text" id="taskInput" placeholder="Escribe una nueva tarea...">
+      <button id="addTask">Agregar Tarea</button>
+      <button id="toggleTheme">Modo Oscuro</button>
+    </div>
+    <div class="columns">
+      <div class="column" id="pending">
+        <h2>Pendiente</h2>
+        <ul class="task-list" id="pendingList"></ul>
+      </div>
+      <div class="column" id="inProgress">
+        <h2>En Progreso</h2>
+        <ul class="task-list" id="inProgressList"></ul>
+      </div>
+      <div class="column" id="completed">
+        <h2>Completado</h2>
+        <ul class="task-list" id="completedList"></ul>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
 
 </body>
-
 </html>
 
 <!--@author: juancaaa11-->
